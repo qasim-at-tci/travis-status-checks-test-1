@@ -3,4 +3,14 @@ dist: xenial
 arch: amd64
 language: ruby
 
-script: true
+jobs:
+  include:
+    - os: linux
+      dist: focal
+      arch: amd64
+      script: true
+
+    - os: linux
+      dist: focal
+      arch: Arm64
+      script: true
