@@ -14,3 +14,8 @@ jobs:
       dist: focal
       arch: Arm64
       script: true
+
+    - os: linux
+      dist: focal
+      arch: ppc64le
+      script: true
