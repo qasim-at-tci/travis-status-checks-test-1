@@ -8,19 +8,13 @@ jobs:
     - os: linux
       dist: focal
       arch: amd64
-      script: true
+      if: env(super) IS NOT present
+      script:
+        - echo "Triggered var logic where env var was not set!"
 
     - os: linux
       dist: focal
-      arch: Arm64
-      script: true
-
-    - os: linux
-      dist: focal
-      arch: ppc64le
-      script: true
-
-    - os: linux
-      dist: focal
-      arch: arm64-graviton2
-      script: true
+      arch: amd64
+      if: env(super) IS present
+      script:
+        - echo "Triggered var logic where env var was set!"
